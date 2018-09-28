@@ -1,5 +1,6 @@
 package com.example.ibrahim.fragmentspracapp
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -13,24 +14,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val fManager = supportFragmentManager
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+       val color=Color.parseColor("#000000")
         when (item.itemId) {
             R.id.nav_home -> {
                 fManager.beginTransaction().replace(R.id.mainActFragment, HomeFragment()).commit()
+                home_btn.isSelected
+                home_btn.setTextColor(color)
             }
             R.id.nav_movies -> {
                 fManager.beginTransaction().replace(R.id.mainActFragment, MoviesFragment()).commit()
+                movies_btn.isSelected
+//                movies_btn.setTextColor(color)
             }
             R.id.nav_games -> {
                 fManager.beginTransaction().replace(R.id.mainActFragment, GamesFragment()).commit()
+                games_btn.isSelected
+//                games_btn.setTextColor(color)
             }
             R.id.nav_extras -> {
                 fManager.beginTransaction().replace(R.id.mainActFragment, ExtrasFragment()).commit()
+                extras_btn.isSelected
+//                extras_btn.setTextColor(color)
             }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
