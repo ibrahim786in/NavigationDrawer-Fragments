@@ -23,7 +23,8 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Home"
-                    android:textColor="@android:color/holo_green_dark" />
+                    android:textColor="@android:color/holo_green_light" />
 
                 <Button
                     android:id="@+id/movies_btn"
@@ -52,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="games"
-                    android:textColor="@android:color/holo_purple" />
+                    android:textColor="@android:color/holo_blue_bright" />
 
                 <Button
                     android:id="@+id/extras_btn"
@@ -60,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="extras"
-                    android:textColor="@android:color/holo_blue_light" />
+                    android:textColor="@android:color/holo_red_light" />
 
 
                 <Button
@@ -86,10 +87,11 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
+        android:layout_gravity="start
+"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        app:menu="@menu/activity_main_drawer">
 
     </android.support.design.widget.NavigationView>
 
