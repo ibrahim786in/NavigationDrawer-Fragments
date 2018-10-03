@@ -75,13 +75,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         notPressed()
+        home_btn.isPressed = true
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
+
         Log.i("FragmentMainActivity", "onCreate")
+
         fManager.beginTransaction().add(R.id.mainActFragment, HomeFragment()).addToBackStack(null).commit()
         onNavigationItemSelected(nav_view.menu.getItem(0))
 
@@ -90,6 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             notPressed()
             onNavigationItemSelected(nav_view.menu.getItem(0))
             home_btn.isPressed = true
+            home_btn.isSelected=true
 
 //        onNavigationItemSelected(commonItem)
         }
@@ -98,6 +102,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             notPressed()
             onNavigationItemSelected(nav_view.menu.getItem(1))
             movies_btn.isPressed = true
+            movies_btn.isSelected=true
 
         }
         games_btn.setOnClickListener {
@@ -105,6 +110,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             notPressed()
             onNavigationItemSelected(nav_view.menu.getItem(2))
             games_btn.isPressed = true
+            games_btn.isSelected=true
 
         }
         extras_btn.setOnClickListener {
@@ -112,6 +118,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             notPressed()
             onNavigationItemSelected(nav_view.menu.getItem(3))
             extras_btn.isPressed = true
+            extras_btn.isSelected=true
 
         }
     }
